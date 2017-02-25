@@ -2,6 +2,7 @@ import argparse
 import serial
 from OSC import OSCClient, OSCMessage, OSCClientError
 import settings
+import time
 
 
 def get_client(ip, port):
@@ -20,7 +21,14 @@ def send_message(client):
 
 
 def main(ip, port, serial_file):
-    ser = serial.Serial(serial_file, 9600)
+    while True:
+        try:
+            ser = serial.Serial(serial_file, 9600)
+            break
+        except:
+            print 'Serial: failed to connect to {}'.format(serial_file)
+            time.sleep(1)
+       
     client = get_client(ip, port)
     print 'Serial: connected to {}'.format(serial_file)
 

@@ -1,3 +1,3 @@
 MATTS_IP = '192.168.2.8'
 MATTS_PORT = 8001
-SERIAL_PORT = '/dev/cu.usbmodem1411'
+SERIAL_PORT = '/dev/ttyACM0'

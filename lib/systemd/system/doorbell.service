@@ -1,0 +1,11 @@
+[Unit]
+Description=VR Doorbell
+After=multi-user.target
+
+[Service]
+Type=idle
+ExecStart=/usr/bin/python /home/pi/VRDoorbell/ucproxy/app.py
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
