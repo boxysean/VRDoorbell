@@ -22,6 +22,7 @@ def send_message(client):
 def main(ip, port, serial_file):
     ser = serial.Serial(serial_file, 9600)
     client = get_client(ip, port)
+    print 'Serial: connected to {}'.format(serial_file)
 
     while True:
         line = ser.readline()
